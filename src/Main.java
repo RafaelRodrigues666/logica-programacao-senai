@@ -4,17 +4,22 @@ public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Digite sua idade: ");
-        int idade = entrada.nextInt();
+        System.out.println("Membro VIP (1 para sim, 0 para não): ");
+        int vip = entrada.nextInt();
 
-        System.out.println("Possui CNH (1 para sim, 0 para não): ");
-        int cnh = entrada.nextInt();
+        System.out.println("Valor compra: ");
+        double valorCompra = entrada.nextDouble();
 
-        if(idade >= 18 && cnh == 1){
-            System.out.println("Verificação Aprovada!!");
+        if(vip == 1 || valorCompra >= 500) {
+
+            double valorPago = valorCompra - (valorCompra * 0.10);
+            double valorDesconto = valorCompra * 0.10;
+
+            System.out.println("Valor a ser Pago: " + valorPago);
+            System.out.println("Desconto: " + valorDesconto);
         }else{
-            System.out.println("Verificação Recusada!! Necessário +18 e CNH!");
+            System.out.println("Valor a ser Pago: " +valorCompra);
+            System.out.println("Para ter desconto necessário membro VIP, ou compra no valor de 500+ reais!! ");
         }
-
     }
 }
